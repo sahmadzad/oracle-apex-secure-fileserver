@@ -26,19 +26,6 @@ Modern "paperless" systems often rely on storing massive **BLOBs** (Binary Large
 
 ---
 
-## 🛠 Project Components
-
-This repository contains the full end-to-end implementation:
-
-| File | Role |
-| :--- | :--- |
-| [**SaveDocumentV2.java**](./SaveDocumentV2.java) | Securely saves files to the Linux/Unix filesystem outside the DB. |
-| [**AccessToDocumentV2.java**](./AccessToDocumentV2.java) | Generates secure access tokens and validates APEX session integrity. |
-| [**ORDS_REST_EDU_session_validation.sql**](./ORDS_REST_EDU_session_validation_2025_12_29.sql) | The REST handler that verifies if an  is active and valid. |
-| [**f128.sql**](./f128.sql) | Sample Oracle APEX Application showing the implementation logic. |
-
----
-
 ## ⚙️ How It Works (The Flow)
 1. **Request:** A user in Oracle APEX clicks to view a document.
 2. **Validation:** The Java REST layer calls the ORDS validation endpoint to check the user's current .
