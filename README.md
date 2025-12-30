@@ -32,11 +32,6 @@ Modern "paperless" systems often rely on storing massive **BLOBs** (Binary Large
 3. **Tokenization:** Upon successful validation, a unique secure path/token is provided.
 4. **HTTPS Delivery:** The file is streamed directly from the server via HTTPS, bypassing the database processing engine completely.
 
----
-
-## 🤝 Contributing & Recognition
-This project is part of my contribution to the **Oracle ACE Program** and the global **Green IT** movement. 
-
 **Author:** Saeed Ahmadzad-Asl  
 **Contact:** [sahmadzad@gmail.com](mailto:sahmadzad@gmail.com)  
 
