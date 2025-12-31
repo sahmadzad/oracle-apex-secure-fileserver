@@ -5,8 +5,7 @@ DECLARE
     l_file      VARCHAR2(4000);
     l_url       VARCHAR2(4000);
 
-    c_fileserver CONSTANT VARCHAR2(200) :=
-        'http://172.16.250.162:9001/k/';
+    c_fileserver CONSTANT VARCHAR2(200);
 BEGIN
     l_empno := apex_application.g_x01;
 
@@ -41,13 +40,13 @@ BEGIN
     apex_web_service.g_request_headers(3).value := 'EMP_DOC';
 
     apex_web_service.g_request_headers(4).name  := 'p_app_id';
-    apex_web_service.g_request_headers(4).value := :APP_ID;
+    apex_web_service.g_request_headers(4).value :=  GENERATE_CS(l_empno,:APP_SESSION);
 
     apex_web_service.g_request_headers(5).name  := 'p_session_id';
     apex_web_service.g_request_headers(5).value := :APP_SESSION;
 
     l_response := apex_web_service.make_rest_request(
-        p_url         => 'http://172.16.250.162:9001/rest_token/AccessToDocumentV2',
+        p_url         => 'http://weblogic_server:port/rest_token/AccessToDocumentV2',
         p_http_method => 'POST'
     );
 
