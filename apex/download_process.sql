@@ -6,7 +6,7 @@ DECLARE
     l_url       VARCHAR2(4000);
 
     c_fileserver CONSTANT VARCHAR2(200) :=
-        'http://file_server_ip_address:port/k/';
+        'http://172.16.250.162:9001/k/';
 BEGIN
     l_empno := apex_application.g_x01;
 
@@ -47,7 +47,7 @@ BEGIN
     apex_web_service.g_request_headers(5).value := :APP_SESSION;
 
     l_response := apex_web_service.make_rest_request(
-        p_url         => 'http://weblogic_server_ip_adrress:port/rest_token/AccessToDocumentV2',
+        p_url         => 'http://172.16.250.162:9001/rest_token/AccessToDocumentV2',
         p_http_method => 'POST'
     );
 
@@ -89,4 +89,4 @@ EXCEPTION
         apex_json.write('stack',DBMS_UTILITY.format_error_backtrace);
         apex_json.close_object;
 
-END;	
+END;
